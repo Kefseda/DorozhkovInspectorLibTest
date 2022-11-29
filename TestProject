@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using InspectorLib;
+
+namespace TestProject
+{
+    class Program
+    {
+
+        
+        static void Main(string[] args)
+        {
+            FunctionInsp fi = new FunctionInsp();
+
+            fi.AddWorker();
+            fi.AddWorker();
+            fi.AddWorker();
+
+            Console.WriteLine(fi.GetInspector());
+
+            fi.SetInspector("Human H.H.");
+
+            Console.WriteLine("Введите имя нового инспектора");
+            string newInspector = Console.ReadLine();
+            fi.AddWorker(newInspector);
+            fi.SetInspector(newInspector);
+
+            Console.WriteLine(fi.GetInspector());
+
+            Console.WriteLine(fi.GetWorker());
+
+            Console.WriteLine(fi.GetCarInspection());
+
+            Console.WriteLine(fi.GenerateNumber(123,'a',25));
+            Console.WriteLine(fi.GenerateNumber(321, 'b' ));
+
+            Console.ReadKey();
+        }
+    }
+}
